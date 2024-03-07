@@ -1,20 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import { useState, useEffect } from 'react';
+import Cards from './src/Select';
+//import GlobalStyles from './GlobalStyles';
 
 export default function App() {
+
+  const [selectedBreed, setSelectedBreed] = useState("");
+
+  const handleSelectBreed = (breed) => {
+    setSelectedBreed(breed);
+    //updateCat();
+};
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <View>
+    {/* <Comments/> */}
+    <Cards onSelectBreed={handleSelectBreed}/>
+    {/* <SelectComponent/> */}
+  </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
