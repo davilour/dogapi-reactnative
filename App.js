@@ -46,7 +46,7 @@ useEffect(() => {
 
 const getRandomBreeds = (breeds, count) => {
   const shuffledBreeds = breeds.sort(() => Math.random() - Math.random());
-  return shuffledBreeds.slice(0, count);
+  return shuffledBreeds.slice(0, count)
 };
 
 

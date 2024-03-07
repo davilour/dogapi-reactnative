@@ -36,7 +36,7 @@ const Select = ({ onSelectBreed }) => {
     <Container>
       {/* <Title>Selecione a raça de um cachorro 🐶</Title> */}
       {pickerItems && (
-        <StyledPicker
+        <StyledPicker style={{}}
           onValueChange={handleSelectChange}
           items={pickerItems}
           placeholder={{ label: "Dog 🐶", value: undefined }}
