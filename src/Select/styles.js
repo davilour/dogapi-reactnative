@@ -8,7 +8,7 @@ export const Container = styled.View`
     align-items:center;
     background-color: #f0f0f0;
     width: 100%;
-    height: 100%;
+    height: 10vh;
 `;
 
 
@@ -19,8 +19,6 @@ export const Title = styled.Text`
 `;
 
 export const StyledPicker = styled(RNPickerSelect)`
-    border-color: #000; /* Adicione uma borda preta */
-    border-width: 1px; /* Defina a largura da borda */
     
 `;
 
