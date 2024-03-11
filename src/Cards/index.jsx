@@ -1,5 +1,6 @@
 import { useState, useCallback, useEffect } from "react";
 import { View, Text, Image, ActivityIndicator, ScrollView } from "react-native";
+import Comment from "../Comment";
 import axios from "axios";
 
 const Cards = ({selectedBreed}) => {  
@@ -59,6 +60,7 @@ const Cards = ({selectedBreed}) => {
             <Text style={{ fontWeight: "bold" }}>Nome:{dogInfo.name}</Text>
             <Text>Temperamento: {dogInfo.temperament}</Text>
             <Text>Expectativa de Vida: {dogInfo.life_span}</Text>
+            <Comment />
           </>
         )}
       </View>

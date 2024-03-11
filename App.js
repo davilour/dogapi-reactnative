@@ -4,7 +4,10 @@ import { useState, useEffect } from 'react';
 import Cards from './src/Cards';
 import Select from './src/Select';
 import axios from 'axios';
+import { Amplify } from 'aws-amplify';
+import config from './src/amplifyconfiguration.json'
 
+Amplify.configure(config);
 
 export default function App() {
 

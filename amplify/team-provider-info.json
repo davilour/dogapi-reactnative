@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-expodogapi-staging-172240-authRole",
+      "UnauthRoleArn": "arn:aws:iam::130261235091:role/amplify-expodogapi-staging-172240-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::130261235091:role/amplify-expodogapi-staging-172240-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-expodogapi-staging-172240-deployment",
+      "UnauthRoleName": "amplify-expodogapi-staging-172240-unauthRole",
+      "StackName": "amplify-expodogapi-staging-172240",
+      "StackId": "arn:aws:cloudformation:us-east-2:130261235091:stack/amplify-expodogapi-staging-172240/779456f0-dd70-11ee-9ddc-0240dcfa4a1f",
+      "AmplifyAppId": "dekxeaajeukz3"
+    },
+    "categories": {
+      "api": {
+        "expodogapi": {}
+      }
+    }
+  }
+}
