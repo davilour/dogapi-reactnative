@@ -60,7 +60,7 @@ const Cards = ({selectedBreed}) => {
             <Text style={{ fontWeight: "bold" }}>Nome:{dogInfo.name}</Text>
             <Text>Temperamento: {dogInfo.temperament}</Text>
             <Text>Expectativa de Vida: {dogInfo.life_span}</Text>
-            <Comment />
+            <Comment selectedBreed={selectedBreed} />
           </>
         )}
       </View>

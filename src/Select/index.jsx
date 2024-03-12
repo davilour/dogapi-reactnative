@@ -1,4 +1,5 @@
 import { Container, Title, StyledPicker } from "./styles";
+import RNPickerSelect from "react-native-picker-select"
 import { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -36,7 +37,7 @@ const Select = ({ onSelectBreed }) => {
     <Container>
       {/* <Title>Selecione a raça de um cachorro 🐶</Title> */}
       {pickerItems && (
-        <StyledPicker style={{}}
+        <RNPickerSelect 
           onValueChange={handleSelectChange}
           items={pickerItems}
           placeholder={{ label: "Dog 🐶", value: undefined }}

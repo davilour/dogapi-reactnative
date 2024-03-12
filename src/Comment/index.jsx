@@ -1,22 +1,42 @@
 import { View, Text, TextInput, Button, FlatList } from 'react-native';
 import { useState, useEffect } from 'react';
+import { CREATE_COMMENT } from '../../graphql/mutations/createComment';
+import { API, generateClient } from '@aws-amplify/api';
+import { graphqlOperation } from '@aws-amplify/api/dist/esm/types';
 
 
-const Comment = () => {
+const Comment = ({selectedBreed}) => {
     const [comentarios, setComentarios] = useState([]);
     const [novoComentario, setNovoComentario] = useState('');
 
-    const adicionarComentario = () => {
-        const novoId = comentarios.length + 1;
-        const novoComentarioObj = { 
-          id: novoId, 
-          autor: 'Você', 
-          texto: novoComentario 
-        };
-        setComentarios([...comentarios, novoComentarioObj]);
-        setNovoComentario('');
-      };
+    const client = generateClient();
+    
+    const adicionarComentario = async () => {
+      try{
 
+        if (!novoComentario.trim()) {
+          console.log('O comentário não pode estar vazio.');
+          return;
+        }
+
+        const novoComentarioObj = {  
+          breedId: selectedBreed.id,
+          //autor: 'Você', 
+          comment: novoComentario 
+        };
+
+        console.log(novoComentarioObj.comment)
+        const result = await client.graphql(graphqlOperation(CREATE_COMMENT, novoComentarioObj ));
+        const novoComentarioCriado = result.data.createComment;
+        console.log(novoComentarioCriado)
+
+        setComentarios([...comentarios, novoComentarioCriado]);
+        setNovoComentario('');
+      } catch (error) {
+        console.log('Erro ao adicionar o comentario ', error)
+      }
+
+    }
 
     const deletarComentario = (id) => {
       const novosComentarios = comentarios.filter(comentarios => comentarios.id !== id);
@@ -41,10 +61,10 @@ const Comment = () => {
         <TextInput
           style={{ height: 40, borderColor: 'gray', borderWidth: 1, marginBottom: 10, paddingHorizontal: 10 }}
           placeholder="Adicionar comentário..."
-          value={novoComentario}
-          onChangeText={(texto) => setNovoComentario(texto)}
+          value={comentarios}
+          onChangeText={() => setNovoComentario(comentarios)}
         />
-        <Button title="Adicionar Comentário" onPress={adicionarComentario} />
+        <Button title="Adicionar Comentário" onPress={() => adicionarComentario(selectedBreed)} />
       </View>
 
     )

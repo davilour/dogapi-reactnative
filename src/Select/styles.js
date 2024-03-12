@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
 import { View, Text } from "react-native";
-import RNPickerSelect from "react-native-picker-select"
+
 
 
 export const Container = styled.View`
@@ -18,7 +18,4 @@ export const Title = styled.Text`
     margin-top:30%;
 `;
 
-export const StyledPicker = styled(RNPickerSelect)`
-    
-`;
 
