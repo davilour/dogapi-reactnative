@@ -1,5 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
-import { Text, View, ScrollView } from 'react-native';
+
+import { Text, View, ScrollView,FlatList } from 'react-native';
 import { useState, useEffect } from 'react';
 import Cards from './src/Cards';
 import Select from './src/Select';
@@ -53,22 +53,19 @@ const getRandomBreeds = (breeds, count) => {
 };
 
 
-  return (
-    <ScrollView>
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" , marginTop:90}}>
-      <Text style={{fontSize:20, }}>Selecione a raça de um cachorro 🐶</Text>
-      <Select onSelectBreed={handleSelectBreed} />
-      <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
-        {selectedBreed ? (
-          <Cards key={selectedBreed.id} selectedBreed={selectedBreed} />
-        ) : (
-          initialBreeds.map((breed) => (
-            <Cards key={breed.id} selectedBreed={breed} />
-          ))
-        )}
-      </View>
-    </View>
-    </ScrollView>
-  );
-}
+return  (
+  <View style={{ justifyContent: "center", alignItems: "center", marginTop: 90 }}>
+  <Text style={{ fontSize: 20 }}>Selecione a raça de um cachorro 🐶</Text>
+  <Select onSelectBreed={handleSelectBreed} />
+  <FlatList
+    data={selectedBreed ? [selectedBreed] : initialBreeds}
+    renderItem={({ item }) => (
+      <Cards key={item.id} selectedBreed={item} />
+    )}
+    keyExtractor={(item) => item.id.toString()}
+    contentContainerStyle={{ flexDirection: "row", flexWrap: "wrap" }}
+  />
+</View>
+      );
+  }
 

@@ -50,7 +50,6 @@ const Cards = ({selectedBreed}) => {
       }, []);
       
     return(
-        <ScrollView>
         <View style={{ margin: 10, padding: 10, borderWidth: 1, borderColor: "gray", borderRadius: 10 }}>
         {isLoadingImage || isLoadingInfo ? (
           <ActivityIndicator size="small" color="#0000ff" />
@@ -60,11 +59,10 @@ const Cards = ({selectedBreed}) => {
             <Text style={{ fontWeight: "bold" }}>Nome:{dogInfo.name}</Text>
             <Text>Temperamento: {dogInfo.temperament}</Text>
             <Text>Expectativa de Vida: {dogInfo.life_span}</Text>
-            <Comment selectedBreed={selectedBreed} />
+            <Comment selectedBreed={selectedBreed} initial />
           </>
         )}
       </View>
-      </ScrollView>
     );
 };
 
