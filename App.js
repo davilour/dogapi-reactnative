@@ -64,7 +64,7 @@ return (
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="App" options={{ headerShown: false }}>
         {() => ( */}
-        <Login />
+        {/* <Login /> */}
           <View style={{ justifyContent: "center", alignItems: "center", marginTop: 90 }}>
             <Text style={{ fontSize: 20 }}>Selecione a raça de um cachorro 🐶</Text>
             <View style={{ borderBottomWidth: 1, borderBottomColor: 'gray', width: '100%', marginTop: 15 }}></View>
