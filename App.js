@@ -56,14 +56,15 @@ const getRandomBreeds = (breeds, count) => {
 return  (
   <View style={{ justifyContent: "center", alignItems: "center", marginTop: 90 }}>
   <Text style={{ fontSize: 20 }}>Selecione a raça de um cachorro 🐶</Text>
+  <View style={{ borderBottomWidth: 1, borderBottomColor: 'gray', width: '100%', marginTop: 15}}></View>
   <Select onSelectBreed={handleSelectBreed} />
+  <View style={{ borderBottomWidth: 1, borderBottomColor: 'gray', width: '100%', marginBottom: 10}}></View>
   <FlatList
     data={selectedBreed ? [selectedBreed] : initialBreeds}
     renderItem={({ item }) => (
       <Cards key={item.id} selectedBreed={item} />
     )}
     keyExtractor={(item) => item.id.toString()}
-    contentContainerStyle={{ flexDirection: "row", flexWrap: "wrap" }}
   />
 </View>
       );

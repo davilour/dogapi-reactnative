@@ -21,6 +21,7 @@ const Cards = ({selectedBreed}) => {
             .then((response) => {
                 const breedData = response.data;
                 const referenceImageId = breedData.reference_image_id;
+     
     
                 axios
                     .get(

@@ -42,6 +42,7 @@ const Select = ({ onSelectBreed }) => {
           items={pickerItems}
           placeholder={{ label: "Dog 🐶", value: undefined }}
           value={selectedBreed}
+          key={pickerItems.id}
         />
       )}
     </Container>
