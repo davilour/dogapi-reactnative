@@ -19,7 +19,7 @@ const Comment = ({selectedBreed}) => {
         
         try {
             if (!novoComentario.trim()) {
-                console.log('O comentário não pode estar vazio.');
+                alert('O comentário não pode estar vazio.');
                 return;
             }
 
@@ -36,7 +36,6 @@ const Comment = ({selectedBreed}) => {
             });
             setComentarios(updatedComentarios);
 
-            console.log(comentarios.breedId.id)
 
             } else {
                     const novoComentarioObj = {  
@@ -59,7 +58,7 @@ const Comment = ({selectedBreed}) => {
         try{
             const input = {id: selectedBreed.id}
             const result = await client.graphql(graphqlOperation(DELETE_COMMENT, input))
-            console.log("Comentario Excluido")
+            alert("Comentario Excluido")
             const novosComentarios = comentarios.filter(comment => comment.id !== selectedBreed.id);
             setComentarios(novosComentarios);
             return;

@@ -1,13 +1,18 @@
 
-import { Text, View, ScrollView,FlatList } from 'react-native';
+import { Text, View, FlatList } from 'react-native';
 import { useState, useEffect } from 'react';
 import Cards from './src/Cards';
 import Select from './src/Select';
+import Login from './screens/Login';
 import axios from 'axios';
 import { Amplify } from 'aws-amplify';
 import config from './src/amplifyconfiguration.json'
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
 
 Amplify.configure(config);
+const Stack = createStackNavigator()
 
 export default function App() {
 
@@ -53,20 +58,30 @@ const getRandomBreeds = (breeds, count) => {
 };
 
 
-return  (
-  <View style={{ justifyContent: "center", alignItems: "center", marginTop: 90 }}>
-  <Text style={{ fontSize: 20 }}>Selecione a raça de um cachorro 🐶</Text>
-  <View style={{ borderBottomWidth: 1, borderBottomColor: 'gray', width: '100%', marginTop: 15}}></View>
-  <Select onSelectBreed={handleSelectBreed} />
-  <View style={{ borderBottomWidth: 1, borderBottomColor: 'gray', width: '100%', marginBottom: 10}}></View>
-  <FlatList
-    data={selectedBreed ? [selectedBreed] : initialBreeds}
-    renderItem={({ item }) => (
-      <Cards key={item.id} selectedBreed={item} />
-    )}
-    keyExtractor={(item) => item.id.toString()}
-  />
-</View>
-      );
+return (
+  <NavigationContainer>
+    {/* <Stack.Navigator>
+      <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="App" options={{ headerShown: false }}>
+        {() => ( */}
+        <Login />
+          <View style={{ justifyContent: "center", alignItems: "center", marginTop: 90 }}>
+            <Text style={{ fontSize: 20 }}>Selecione a raça de um cachorro 🐶</Text>
+            <View style={{ borderBottomWidth: 1, borderBottomColor: 'gray', width: '100%', marginTop: 15 }}></View>
+            <Select onSelectBreed={handleSelectBreed} />
+            <View style={{ borderBottomWidth: 1, borderBottomColor: 'gray', width: '100%', marginBottom: 10 }}></View>
+            <FlatList
+              data={selectedBreed ? [selectedBreed] : initialBreeds}
+              renderItem={({ item }) => (
+                <Cards key={item.id} selectedBreed={item} />
+              )}
+              keyExtractor={(item) => item.id.toString()}
+            />
+          </View>
+        {/* )}
+      </Stack.Screen>
+    </Stack.Navigator> */}
+  </NavigationContainer>
+);
   }
 
