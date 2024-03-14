@@ -1,20 +1,21 @@
+import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 
-const Login = (navigation) => {
+
+const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigation = useNavigation();
 
-  const handleLogin = ({}) => {
-    if (username === 'admin' && password === '123') {
+  const handleLogin = () => {
+    if (username === '' && password === '') {
       setIsLoggedIn(true);
       setUsername('');
       setPassword('');
-      alert('Logado')
-      navigation.navigate('App')
+      alert('Bem-vindo!')
+      navigation.navigate('Principal');
     } else {
       alert('Nome de usuário ou senha incorretos.');
     }
@@ -42,8 +43,9 @@ const Login = (navigation) => {
       >
         <Text style={{ color: 'white', fontSize: 16 }}>Entrar</Text>
       </TouchableOpacity>
-      {isLoggedIn && <Text style={{ marginTop: 20, fontSize: 18, fontWeight: 'bold' }}>Você está logado!</Text>}
+
     </View>
+    
   );
 };
 
