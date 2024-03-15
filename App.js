@@ -3,8 +3,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native'
 import Login from './screens/Login';
 import MainScreen from './screens/MainScreen/Index';
+import config from './services/aws-exports.js'
 import { Amplify } from 'aws-amplify';
-import config from './services/amplifyconfiguration.json'
 
 Amplify.configure(config);
 const Stack = createStackNavigator();

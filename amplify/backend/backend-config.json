@@ -23,7 +23,7 @@
     }
   },
   "auth": {
-    "expodogapi": {
+    "expodogapia249a411": {
       "customAuth": false,
       "dependsOn": [],
       "frontendAuthConfig": {
@@ -32,18 +32,16 @@
           "SMS"
         ],
         "passwordProtectionSettings": {
-          "passwordPolicyCharacters": [
-            "REQUIRES_LOWERCASE",
-            "REQUIRES_NUMBERS",
-            "REQUIRES_UPPERCASE"
-          ],
+          "passwordPolicyCharacters": [],
           "passwordPolicyMinLength": 8
         },
         "signupAttributes": [
-          "NAME"
+          "EMAIL"
         ],
         "socialProviders": [],
-        "usernameAttributes": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
         "verificationMechanisms": [
           "EMAIL"
         ]

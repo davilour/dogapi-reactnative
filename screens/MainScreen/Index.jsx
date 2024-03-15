@@ -3,6 +3,10 @@ import { useState, useEffect } from 'react';
 import Cards from '../../src/Cards';
 import Select from '../../src/Select';
 import axios from 'axios';
+import { Amplify } from 'aws-amplify';
+import config from '../../services/amplifyconfiguration.json'
+
+Amplify.configure(config);
 
 // Tela principal dos dog
 const MainScreen = () => {
