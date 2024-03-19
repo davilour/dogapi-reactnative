@@ -18,7 +18,6 @@ const Login = () => {
       username,
       password,
     );
-      console.log(user)
       navigation.navigate('Principal')
     } catch (error) {
       console.log('error signing in', error);

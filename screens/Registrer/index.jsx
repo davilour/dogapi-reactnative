@@ -25,7 +25,7 @@ const Register = () => {
 
   async function handleConfirmationCode() {
     try {
-      const {ConfirmRegister} = await Auth.confirmSignUp(username, confirmationCode);
+      const ConfirmRegister = await Auth.confirmSignUp(username, confirmationCode);
         alert('Registro confirmado com sucesso!');
         navigation.navigate('Login')
     } catch (error) {
