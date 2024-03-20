@@ -5,13 +5,10 @@ import Login from './screens/Login';
 import MainScreen from './screens/MainScreen/Index';
 import Register from './screens/Registrer/index.jsx';
 import config from './services/aws-exports.js'
-import { Amplify } from 'aws-amplify';
-import Constants from 'expo-constants';
-
-const apiUrl = Constants.manifest.env.API;
-
+import { Amplify, Auth } from 'aws-amplify';
 
 Amplify.configure(config);
+Auth.configure(config);
 const Stack = createStackNavigator();
 
 export default function App () {
@@ -25,3 +22,4 @@ export default function App () {
     </NavigationContainer>
   );
 }
+
