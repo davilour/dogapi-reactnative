@@ -30,6 +30,10 @@ const Login = () => {
     navigation.navigate('Register')
   }
 
+  const handleForgotPassword = () => {
+    navigation.navigate('ForgotPassword')
+  }
+
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', padding: 20 }}>
       <Text style={{ fontSize: 24, marginBottom: 20 }}>Faça login</Text>
@@ -66,6 +70,19 @@ const Login = () => {
        onPress={handleRegistrar}
      >
        <Text style={{ color: 'white', fontSize: 16}}>Registrar</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+      style={{
+        backgroundColor: '#007AFF', // cor azul
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    borderRadius: 8,
+    alignItems: 'center',
+    marginTop: 20,
+      }}
+      onPress={handleForgotPassword}>
+      
+        <Text style={{color: '#FFFFFF', fontWeight: 'bold', fontSize:14}}> Esqueci minha senha</Text>
       </TouchableOpacity>
     </View>
   );
