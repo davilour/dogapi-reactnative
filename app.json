@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "05717c31-f69e-4677-9e8b-5ccde43893d8"
+      }
+    },
+    "android": {
+      "package": "com.davilour.expoapicat"
+    }
+  }
+}

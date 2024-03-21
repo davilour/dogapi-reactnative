@@ -8,6 +8,7 @@ import config from './services/aws-exports.js'
 import { Amplify, Auth } from 'aws-amplify';
 import ForgotPassword from './screens/ForgotPassword/index.jsx';
 
+
 Amplify.configure(config);
 Auth.configure(config);
 const Stack = createStackNavigator();
