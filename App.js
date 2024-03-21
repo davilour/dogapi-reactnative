@@ -7,6 +7,7 @@ import Register from './screens/Registrer/index.jsx';
 import config from './services/aws-exports.js'
 import { Amplify, Auth } from 'aws-amplify';
 
+
 Amplify.configure(config);
 Auth.configure(config);
 const Stack = createStackNavigator();
