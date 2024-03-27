@@ -33,7 +33,8 @@ const Comment = ({selectedBreed}) => {
                 return comment;
             });
             setComentarios(updatedComentarios);
-
+            setNovoComentario('');
+            setcomentarioEditado(null)
 
             } else {
                     const novoComentarioObj = {  
@@ -44,6 +45,7 @@ const Comment = ({selectedBreed}) => {
             const novoComentarioCriado = result.data.createComment;
             setComentarios([...comentarios, novoComentarioCriado]);
             setNovoComentario('');
+            setcomentarioEditado(null)
             }
         }
         catch (error) {
@@ -68,6 +70,9 @@ const Comment = ({selectedBreed}) => {
     const updateComment = async (comment) =>{
         setcomentarioEditado(comment);
         setNovoComentario(comment.comment)
+        if(setNovoComentario === ''){
+            setComentarios('')
+        }
     }
 
     useEffect(() => {
@@ -105,7 +110,7 @@ const Comment = ({selectedBreed}) => {
                                     onPress={() => updateComment(item)}
                                     style={{ backgroundColor: 'blue', padding: 10, borderRadius: 5 }}
                                 >
-                                    <Text style={{ color: 'white' }}>{comentarioEditado ? 'Atualizar' : 'Adicionar'}</Text>
+                                    <Text style={{ color: 'white' }}>{comentarioEditado ? 'Adicionar' : 'Atualizar'}</Text>
                                 </TouchableOpacity>
                             </View>
                         </View>

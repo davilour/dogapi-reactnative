@@ -23,15 +23,12 @@
     "@react-navigation/native": "^6.1.16",
     "@react-navigation/stack": "^6.3.28",
     "@types/react": "~18.2.45",
+    "amazon-cognito-identity-js": "^6.3.12",
     "aws-amplify": "^5.2.20",
     "axios": "^1.6.7",
     "eas-cli": "^7.6.0",
     "expo": "49",
-<<<<<<< HEAD
     "expo-status-bar": "~1.11.1",
-=======
-    "expo-status-bar": "~1.6.0",
->>>>>>> 921e93c457bc9cd502c813d8ce55012a54e8658f
     "global": "^4.4.0",
     "proptypes": "^1.1.0",
     "react": "^18.2.0",

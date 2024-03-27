@@ -19,10 +19,13 @@ const Login = () => {
       password,
     );
       navigation.navigate('Principal')
+      setUsername('')
+      setPassword('')
     } catch (error) {
       console.log('error signing in', error);
-      alert('Nome de usuário ou senha incorretos.');
-      console.log('Tentando fazer login com:', username, password);
+      alert(error);
+      setUsername('')
+      setPassword('')
     }
   }
 
@@ -32,6 +35,8 @@ const Login = () => {
 
   const handleForgotPassword = () => {
     navigation.navigate('ForgotPassword')
+    setUsername('')
+    setPassword('')
   }
 
   return (

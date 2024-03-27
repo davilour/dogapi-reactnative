@@ -1,12 +1,14 @@
 {
   "expo": {
+    "version": "1.0.2",
     "extra": {
       "eas": {
-        "projectId": "05717c31-f69e-4677-9e8b-5ccde43893d8"
+        "projectId": "7cab0286-f530-45ce-8029-4f14113a71bf"
       }
     },
     "android": {
-      "package": "com.davilour.expoapicat"
+      "package": "com.davilour.expoapicat",
+      "versionCode": 2
     }
   }
 }

@@ -1,0 +1,34 @@
+appId: null
+---
+- launchApp
+- swipe:
+    direction: "UP"
+- tapOn: "Expo Go"
+- tapOn: "expo-apicat"
+- tapOn: "E-mail"
+- inputText: "davi@devlandia.net"
+- tapOn: "Senha"
+- inputText: "Geladinho123"
+- tapOn: "Entrar"
+- tapOn: "Adicionar comentário..."
+- inputText: "teste"
+- tapOn: "Back"
+- tapOn: "Adicionar Comentário"
+- tapOn: "OK"
+- tapOn: "Excluir"
+- tapOn: "Adicionar comentário..."
+- inputText: "teste"
+- tapOn:
+    id: "android:id/input_method_nav_back"
+- tapOn: "Adicionar Comentário"
+- tapOn: "Adicionar"
+- tapOn:
+    point: "80%,76%"
+- tapOn:
+    id: "android:id/input_method_nav_back"
+- inputText: "teste123"
+- tapOn: "Back"
+- tapOn: "Atualizar Comentário"
+- tapOn:
+    point: "50%,12%"
+
