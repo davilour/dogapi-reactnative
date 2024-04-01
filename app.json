@@ -1,14 +1,36 @@
 {
   "expo": {
-    "version": "1.0.2",
+    "name": "DOG API",
+    "slug": "expo-apicat",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": " ",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.davilour.expoapicat",
+      "versionCode": 1
+    },
+    "web": {
+      "bundler": "metro",
+      "favicon": "./assets/favicon.png"
+    },
     "extra": {
       "eas": {
         "projectId": "7cab0286-f530-45ce-8029-4f14113a71bf"
       }
-    },
-    "android": {
-      "package": "com.davilour.expoapicat",
-      "versionCode": 2
     }
   }
 }
